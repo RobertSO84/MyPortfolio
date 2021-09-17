@@ -1,6 +1,5 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 
@@ -38,6 +37,7 @@ html {
     border: 0.5rem outset #fff;
     padding: 0.1rem;
     overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
 
 }
 
@@ -234,6 +234,7 @@ html {
     top: 0;
     left: 0;
     transition: left 2s, top 2s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
 }
 
 .circle-1 {
@@ -272,6 +273,7 @@ html {
     overflow: hidden;
     border-radius: 50%;
     transition: width 0.5s, height 0.5s;
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);*/
 }
 
 .main-circle:hover {
@@ -279,7 +281,7 @@ html {
     height: 65rem;
 }
 .main-circle img {
-    mix-blend-mode:lighten; 
+    mix-blend-mode:none; 
     width: 55rem;
     border-radius: 50%;
     height: auto;
@@ -287,27 +289,30 @@ html {
     position: relative;
     top: 6rem;
     left: 0;
-    transition: left 2s, top 2s;
+    transition: left 5s, top 5s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
     
     
 }
 
-/* .main-circle img:hover {
+.main-circle:hover img {
     mix-blend-mode: normal;
     
-} */
+}
 
 /* End of Animated Circles */
 
 /* Featured text */
 .featured-text {
     font-size: 2.2rem;
+    font-weight: 700;
     color: #fff;
     text-transform: uppercase;
     width:  0;
-    word-wrap: break-word;
+    word-wrap:break-word;
     line-height: 2;
     position: sticky;
+    text-shadow: 0.5rem 0.5rem 1rem #fafafa;
 }
 
 .featured-text-1 {
@@ -386,6 +391,7 @@ html {
     left: 50%;
     bottom: -5rem;
     transform: translate(-50%);
+    z-index: 1;
 }
 
 
@@ -421,6 +427,7 @@ html {
     border-radius: 0.5rem;
     cursor:pointer;
     perspective: 20rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
     
 }
 
