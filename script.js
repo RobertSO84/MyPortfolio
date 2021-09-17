@@ -46,11 +46,7 @@ const animateCircles = (e,x,y) => {
     mY = e.clientY;
 };
 
-
-
 // End of Animated Circles
-
-
 
 document.body.addEventListener('mousemove', (e) => {
     let x = e.clientX;
@@ -65,23 +61,59 @@ document.body.addEventListener("mouseleave", () => {
 })
 
 // Main Button
-const mainBtn = document.querySelector(".main-btn");
+const mainBtns = document.querySelectorAll(".main-btn");
 
-let ripple;
+mainBtns.forEach(btn => {
+    let ripple;
 
-mainBtn.addEventListener("mouseenter", e => {
-    const left = e.clientX - e.target.getBoundingClientRect().left;
-    const top = e.clientY - e.target.getBoundingClientRect().top;
+    btn.addEventListener("mouseenter", e => {
+        const left = e.clientX - e.target.getBoundingClientRect().left;
+        const top = e.clientY - e.target.getBoundingClientRect().top;
 
-    ripple = document.createElement("div");
-    ripple.classList.add("ripple");
-    ripple.style.left = `${left}px`;
-    ripple.style.top = `${top}px`;
-    mainBtn.prepend(ripple);
+        ripple = document.createElement("div");
+        ripple.classList.add("ripple");
+        ripple.style.left = `${left}px`;
+        ripple.style.top = `${top}px`;
+        btn.prepend(ripple);
+    });
+
+    btn.addEventListener("mouseleave", () => {
+        btn.removeChild(ripple);
+    });
 });
 
-mainBtn.addEventListener("mouseleave", () => {
-    mainBtn.removeChild(ripple);
-})
+// End of Main Button
+
+// About Me Text
+const aboutMeText = document.querySelector(".about-me-text");
+const aboutMeTextContent = "I am a designer & I create award winning websites with the best user experience & I do not talk much, just contact me.";
+
+Array.from(aboutMeTextContent).forEach((char) => {
+    const span = document.createElement("span");
+    span.textContent = char;
+    aboutMeText.appendChild(span);
+
+    span.addEventListener("mouseenter", (e) => {
+        e.target.style.animation = "aboutMeTextAnim 5s infinite"    
+    });
+});
+// End of About Me Text
+
+// Projects
+const projects = document.querySelectorAll(".project");
+
+projects.forEach((project) => {
+    project.addEventListener("mouseenter", () => {
+        project.firstElementChild.style.top = `-${
+            project.firstElementChild.offsetHeight - project.offsetHeight+20}px`;
+
+    });
+
+    project.addEventListener("mouseleave", () => {
+        project.firstElementChild.style.top = "2rem";
+    });
 
 
+});
+
+// End of Projects
