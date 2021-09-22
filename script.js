@@ -137,7 +137,7 @@ projects.forEach((project, i) => {
         };
     });
     // End of Big Project Image
-    if(i >= 6) {
+    if(i >= 3) {
         project.style.cssText ="display: none; opacity:0"
     }
 
@@ -177,17 +177,28 @@ projectsBtn.addEventListener("click", (e) => {
     showHiddenBool ? (projectsBtnText.textContent = "Show Less") : (projectsBtnText.textContent = "Show More");
 
     projects.forEach((project, i) => {
-        i>= 6 && (showHiddenBool ? 
+        i>= 3 && (showHiddenBool ? 
             showProjects(project,i):
             hideProjects(project, i));                 
     });
     showHiddenBool = !showHiddenBool
 });
-
-
 // End of Projects Button
-
-
-
-
 // End of Projects
+
+// Section 4
+document.querySelectorAll(".service-btn").forEach (service => {
+    service.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const serviceText = service.nextElementSibling;
+        serviceText.classList.toggle("change");
+
+        const rightPosition = serviceText.classList.contains("change") ? `calc(100% - ${getComputedStyle(service.firstElementChild).width})`:0;
+
+        service.firstElementChild.style.right = rightPosition;
+    });
+});
+
+
+// End of Section 4
