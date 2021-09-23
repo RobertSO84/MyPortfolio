@@ -209,7 +209,7 @@ html {
     width: 100%;
     height: 100vh;
     background: #28527A;
-    background: linear-gradient(rgba(40,82,122, 0.5),rgba(40,82,122, 0.7)), url(images/back/back_\(2\).jpg) center no-repeat;
+    background: linear-gradient(rgba(40,82,122, 0.5),rgba(40,82,122, 0.7)), url(images/back/back__\(13\).jpg) center no-repeat;
     background-size: cover;
 }
 
@@ -384,12 +384,16 @@ html {
         top: 0; 
     }
     10%,
-    90% {
+    85% {
         color: #F58634;
         top: 0;
     }
+    40%,
+    60% {
+        color:#81B214
+    }
     100% {
-        color: #81B214;
+        color: #2ab2f1;
         top: 0;
     }
 }
@@ -637,8 +641,59 @@ html {
     opacity: 1;
     transition: height 0.5s, opacity 0.5s 0.3s;
 }
-
-
 /* End of Section 4 */
+
+/* Section 5 */
+.section-5 {
+    position: relative;
+    height: 100vh;
+}
+
+/* Form */
+.form-heading {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 6rem;
+    font-weight: 400;
+    color: #F58634;
+    letter-spacing: 0.3rem;
+    margin-bottom: 3rem;
+}
+.contact-form{
+    flex-direction: column;
+}
+.contact-form-input {
+    width: 60rem;
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: rgba(255,255,255,0.1);
+    border: 0.1rem solid #38A3A5;
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #aaa;
+    letter-spacing: 0.1rem;
+    height: 5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+}
+.contact-form-textarea {
+    height: 20rem;
+    resize: none;
+}
+.form-submit-btn {
+    width: 20rem;
+    height: 5rem;
+    background-color: #e7be08;
+    border:none;
+    align-self: flex-start;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+}
+
+
+/* End of Form */
+/* End of Section 5 */
 
 
