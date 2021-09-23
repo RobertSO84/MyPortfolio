@@ -209,7 +209,7 @@ html {
     width: 100%;
     height: 100vh;
     background: #28527A;
-    background: linear-gradient(rgba(40,82,122, 0.5),rgba(40,82,122, 0.7)), url(images/back/back_12.jpg) center no-repeat;
+    background: linear-gradient(rgba(40,82,122, 0.5),rgba(40,82,122, 0.7)), url(images/back/back_\(2\).jpg) center no-repeat;
     background-size: cover;
 }
 
@@ -303,11 +303,11 @@ html {
     height: 65rem;
 }
 .main-circle img {
-    mix-blend-mode:none; 
+    mix-blend-mode: none; 
     width: 55rem;
     border-radius: 50%;
     height: auto;
-    opacity: 0.99;
+    opacity: 0.90;
     position: relative;
     top: 6rem;
     left: 0;
@@ -363,13 +363,13 @@ html {
     width: 80%;
     margin: auto;
 }
-.about-me-text { /*span*/
+.about-me-text span{ /*span*/
     font-size: 7rem;
     font-weight: bold;
     color: #aaa;
     letter-spacing: 0.5rem;
     line-height: 0.9;
-    text-shadow: 0 0 1rem #38A3A5;
+    /*text-shadow: 0 0 1rem #fff;*/
     position: relative;
     mix-blend-mode: color-dodge ;
 }
@@ -385,11 +385,11 @@ html {
     }
     10%,
     90% {
-        color: #fff;
-        top: 2rem;
+        color: #F58634;
+        top: 0;
     }
     100% {
-        color: #aaa;
+        color: #81B214;
         top: 0;
     }
 }
@@ -430,11 +430,11 @@ html {
     height: 35rem;
     overflow: hidden;
     margin: 5rem;
-    background-color: #000;
+    background-color: #fff;
     display: flex;
     justify-content: center;
     position: relative;
-    border: 0.3rem outset #e7be08;
+    border: 0.3rem outset #aaa;
     border-radius: 1rem;
     cursor:pointer;
     perspective: 20rem;

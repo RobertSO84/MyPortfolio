@@ -94,7 +94,7 @@ Array.from(aboutMeTextContent).forEach((char) => {
     aboutMeText.appendChild(span);
 
     span.addEventListener("mouseenter", (e) => {
-        e.target.style.animation = "aboutMeTextAnim 5s infinite"    
+        e.target.style.animation = "aboutMeTextAnim 2s infinite"    
     });
 });
 // End of About Me Text
