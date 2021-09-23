@@ -13,7 +13,7 @@
     text-decoration: none;
     list-style-type: none;
     outline: none;
-    font-family: "Jura", sans-serif;
+    font-family: "Ubuntu", sans-serif;
 }
 
 html {
@@ -131,6 +131,7 @@ html {
     width: 0;
     word-break: break-all;
     line-height: 2.5;
+    text-shadow: 0.2rem 0.2rem 0.2rem black;
 }
 
 
@@ -334,7 +335,7 @@ html {
     word-wrap:break-word;
     line-height: 2;
     position: sticky;
-    text-shadow: 0.5rem 0.5rem 1rem #fafafa;
+    text-shadow: 0.2rem 0.2rem 0.2rem black;
 }
 
 .featured-text-1 {
