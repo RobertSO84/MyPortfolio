@@ -3,6 +3,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
+@font-face {
+    font-family: myFirstFont;
+    src: url(./fonts/Thrones.ttf);
+ }
+
 
 /* Common Styles */
 
@@ -216,6 +221,81 @@ html {
 
 /* End of Page Black Background */
 
+/* Navigation */
+
+/* Menu Icon */
+.menu-icon {
+    position: fixed;
+    top: 0;
+    right: 6rem;
+    width: 12rem;
+    height: 7rem;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 100;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    
+}
+
+.menu-icon-line {
+    width: 0rem;
+    height: 0rem;
+    background-color: #fff;
+    margin: 0.5rem 0;
+    box-shadow: 0 0.3rem 0.5rem #000;
+}
+
+.menu-icon-line img {
+    filter:invert(0.85);
+    border: 0.3rem outset rgb(0, 0, 0);
+    padding: 0.7rem;
+    border-radius: 50%;
+    box-shadow: 0 0.3rem 0.5rem #fff;
+    mix-blend-mode: difference;
+    
+}
+.show-menu-icon {
+    opacity: 1;
+    visibility: visible;
+    
+}
+
+/* End of Menu Icon */
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 2.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 3rem;
+    z-index: 100;
+    transition: opacity 0.5s, visibility 0.5s, transform 0.5s ;
+}
+
+.navbar-link {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0 2.5rem;
+    
+    text-shadow: 0.3rem 0.5rem #000;
+    
+}
+
+.hide-navbar {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(10rem);
+
+}
+/* End of Navbar */
+
+/* Enf of Navigation */
+
 /* Section 1 */
 .section-1 {
     position: relative;
@@ -328,7 +408,8 @@ html {
 /* Featured text */
 .featured-text {
     font-size: 2.2rem;
-    font-weight: 700;
+    font-family: myFirstFont, sans-serif;
+    font-weight: 200;
     color: #fff;
     text-transform: uppercase;
     width:  0;

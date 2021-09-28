@@ -84,6 +84,29 @@ mainBtns.forEach(btn => {
 
 // End of Main Button
 
+// Navigation
+const menuIcon = document.querySelector(".menu-icon");
+const navbar = document.querySelector(".navbar");
+
+document.addEventListener('scroll', () => {
+    menuIcon.classList.add("show-menu-icon");
+    navbar.classList.add("hide-navbar");  
+    
+    if(window.scrollY === 0) {
+        menuIcon.classList.remove("show-menu-icon");
+        navbar.classList.remove("hide-navbar");
+    }
+});
+
+menuIcon.addEventListener("click", () => {
+    menuIcon.classList.remove("show-menu-icon");
+    navbar.classList.remove("hide-navbar");
+})
+
+
+
+// End of Navigation
+
 // About Me Text
 const aboutMeText = document.querySelector(".about-me-text");
 const aboutMeTextContent = "I am a designer & I create award winning websites with the best user experience & I do not talk much, just contact me.";
