@@ -90,11 +90,25 @@ const progressBar = document.querySelector(".progress-bar");
 const halfCircles = document.querySelectorAll(".half-circle");
 const halfCircleTop = document.querySelector(".half-circle-top");
 const progressBarCircle = document.querySelector(".progress-bar-circle");
+let scrolledPortion = 0;
+let scrollBool = false;
+let imageWrapper = false;
 
-const progressbarFn = () => {
+const progressBarFn = (bigImgWrapper) => {
+    imageWrapper = bigImgWrapper;
+    let pageHeight = 0;
+    
     const pageViewportHeight = window.innerHeight;
-    const pageHeight = document.documentElement.scrollHeight;
-    const scrolledPortion = window.pageYOffset;
+
+    if(!imageWrapper) {
+        pageHeight = document.documentElement.scrollHeight;
+        scrolledPortion = window.pageYOffset;
+    } else {
+        pageHeight = imageWrapper.firstElementChild.scrollHeight;
+        scrolledPortion = imageWrapper.scrollTop;
+    }
+    
+    
 
     const scrolledPortionDegree = (scrolledPortion / (pageHeight - pageViewportHeight)) * 360;
 
@@ -109,22 +123,9 @@ const progressbarFn = () => {
         }
     });
 
-    const scrollBool = scrolledPortion + pageViewportHeight === pageHeight;
+    scrollBool = scrolledPortion + pageViewportHeight === pageHeight;
 
-    // Progress Bar Click
-    progressBar.onclick = e => {
-        e.preventDefault();
-
-        const sectionPositions = Array.from(sections).map(section => scrolledPortion + section.getBoundingClientRect().top);
-
-            const position = sectionPositions.find(sectionPosition => { 
-                return sectionPosition > scrolledPortion;
-    })
-
-    scrollBool ? window.scrollTo(0,0) : window.scrollTo(0, position);
-
-    };
-    // End of Progress Bar Click
+    
 
     // Arrow Rotation
     if (scrollBool) {
@@ -133,10 +134,28 @@ const progressbarFn = () => {
         progressBarCircle.style.transform = "rotate(0)";
     }
     // End of Arrow Rotation
-
 };
 
-progressbarFn();
+// Progress Bar Click
+progressBar.addEventListener ("click", e => {
+    e.preventDefault();
+
+    if(!imageWrapper) {
+        const sectionPositions = Array.from(sections).map(section => scrolledPortion + section.getBoundingClientRect().top);
+
+        const position = sectionPositions.find(sectionPosition => { 
+            return sectionPosition > scrolledPortion;
+        });
+
+        scrollBool ? window.scrollTo(0,0) : window.scrollTo(0, position);
+    } else {
+        scrollBool ? imageWrapper.scrollTo(0,0) : imageWrapper.scrollTo(0, imageWrapper.scrollHeight);
+    }
+
+});
+// End of Progress Bar Click
+
+progressBarFn();
 
 // End of Progress Bar
 
@@ -144,7 +163,8 @@ progressbarFn();
 const menuIcon = document.querySelector(".menu-icon");
 const navbar = document.querySelector(".navbar");
 
-document.addEventListener('scroll', () => {
+
+const scrollFn = () => {
     menuIcon.classList.add("show-menu-icon");
     navbar.classList.add("hide-navbar");  
     
@@ -153,8 +173,10 @@ document.addEventListener('scroll', () => {
         navbar.classList.remove("hide-navbar");
     }
 
-    progressbarFn();
-});
+    progressBarFn();
+};
+
+document.addEventListener("scroll", scrollFn);
 
 menuIcon.addEventListener("click", () => {
     menuIcon.classList.remove("show-menu-icon");
@@ -208,13 +230,26 @@ projects.forEach((project, i) => {
         bigImg.setAttribute("src",`${imgPath}-big.jpg`);
         bigImgWrapper.appendChild(bigImg);
         document.body.style.overflowY = "hidden";
+
+        document.removeEventListener("scroll", scrollFn);
         
+        progressBarFn(bigImgWrapper);
+
+        bigImgWrapper.onscroll = () => {
+            progressBarFn(bigImgWrapper);
+        };
+        
+
         projectHideBtn.classList.add("change");
 
         projectHideBtn.onclick = () => {
             projectHideBtn.classList.remove("change");
             bigImgWrapper.remove();
             document.body.style.overflowY = "scroll";
+
+            document.addEventListener("scroll", scrollFn);
+
+            progressBarFn();
         };
     });
     // End of Big Project Image
