@@ -256,25 +256,13 @@ html {
 .half-circle-top {
     background-color: #fff;
 }
-/* .progress-bar:hover .half-circle-top {
-    opacity: 0;
-    transition:  opacity 0s 1s ;
-}
 
-.progress-bar:hover .half-circle:nth-child(1) {
-    transform: rotate(180deg);
-    transition: transform 1s linear;
-}
-.progress-bar:hover .half-circle:nth-child(2) {
-    transform: rotate(360deg);
-    transition: transform 2s linear;
-} */
 .progress-bar-circle {
-    width: 7.8rem;
-    height: 7.8rem;
-    background-color: #28527A;
+    width: 7rem;
+    height: 7rem;
+    background-color: #81B214;
     border-radius: 50%;
-    color: #38A3A5;
+    color: #fff;
     font-size: 4rem;
     z-index: 200;
     transition: transform 0.5s;
@@ -288,8 +276,8 @@ html {
 /* Menu Icon */
 .menu-icon {
     position: fixed;
-    top: 0;
-    right: 6rem;
+    top: 3.5rem;
+    right: 0;
     width: 12rem;
     height: 7rem;
     flex-direction: column;
@@ -297,6 +285,7 @@ html {
     visibility: hidden;
     z-index: 100;
     cursor: pointer;
+    transform: translate(-50%, -50%);
     transition: opacity 0.2s;
     
 }
@@ -307,6 +296,11 @@ html {
     background-color: #fff;
     margin: 0.5rem 0;
     box-shadow: 0 0.3rem 0.5rem #000;
+}
+
+.show-menu-icon {
+    opacity: 1;
+    visibility: visible;   
 }
 
 .menu-icon-line:nth-child(1) {
@@ -321,12 +315,6 @@ html {
     background-color: #e7be08;
 }
 
-
-.show-menu-icon {
-    opacity: 1;
-    visibility: visible;
-    
-}
 
 /* End of Menu Icon */
 /* Navbar */
@@ -347,9 +335,7 @@ html {
     text-transform: uppercase;
     color: #fff;
     margin: 0 2.5rem;
-    
     text-shadow: 0.3rem 0.5rem #000;
-    
 }
 
 .hide-navbar {
