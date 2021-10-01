@@ -408,28 +408,28 @@ html {
 }
 
 .circle-1 {
-    background: url(images/landing/circle9.jpg) center no-repeat;
+    background: url(images/landing/circle11.jpg) center no-repeat;
     background-size:cover;
     background-clip: content-box;
     border: 1rem outset var(--azulOxford2);
     margin-left: -10rem;
 }
 .circle-2 {
-    background: url(images/landing/circle4.jpg) center no-repeat;
+    background: url(images/landing/circle3.jpg) center no-repeat;
     background-size:cover;
     background-clip: content-box;
     border: 1rem outset var(--azulCielo);
     margin-right: -10rem;
 }
 .circle-3 {
-    background: url(images/landing/circle3.jpg) center no-repeat;
+    background: url(images/landing/circle5.jpg) center no-repeat;
     background-size:cover;
     background-clip: content-box;
     border: 1rem outset var(--azulRey2);
     margin-left: -10rem;
 }
 .circle-4 {
-    background: url(images/landing/circle5.jpg) center no-repeat;
+    background: url(images/landing/circle4.jpg) center no-repeat;
     background-size:cover;
     background-clip: content-box;
     border: 1rem outset var(--azulPalido2);
