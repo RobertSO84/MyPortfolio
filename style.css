@@ -408,10 +408,10 @@ html {
 }
 
 .circle-1 {
-    background: url(images/landing/circle6.jpg) center no-repeat;
+    background: url(images/landing/circle9.jpg) center no-repeat;
     background-size:cover;
     background-clip: content-box;
-    border: 1rem outset var(--azulOscuro);
+    border: 1rem outset var(--azulOxford2);
     margin-left: -10rem;
 }
 .circle-2 {
