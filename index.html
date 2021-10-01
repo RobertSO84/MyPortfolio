@@ -214,10 +214,14 @@
             <div class="form-wrapper">
                 <h2 class="form-heading"> Let's Talk</h2>
                 <form class="contact-form center">
-                    <input type="text" class="contact-form-input pointer-enter" placeholder="Name"/>
-                    <input type="email" class="contact-form-input pointer-enter" placeholder="Email"/>
-                    <input type="text" class="contact-form-input pointer-enter" placeholder="Subject"/>
-                    <textarea class="contact-form-input pointer-enter contact-form-textarea" placeholder="Message"></textarea>
+                    <input id="name" type="text" class="contact-form-input pointer-enter" autocomplete="off" placeholder="Name"/>
+                    <p class="message">Error Message</p>
+                    <input id="email" type="text" class="contact-form-input pointer-enter" autocomplete="off" placeholder="Email"/>
+                    <p class="message">Error Message</p>
+                    <input id="subject" type="text" class="contact-form-input pointer-enter" autocomplete="off" placeholder="Subject"/>
+                    <p class="message">Error Message</p>
+                    <textarea id="message" class="contact-form-input pointer-enter contact-form-textarea" autocomplete="off" placeholder="Message"></textarea>
+                    <p class="message">Error Message</p>
                     <input type="submit" class="form-submit-btn pointer-enter" value="Send Request"/>
                 </form>
             </div>
