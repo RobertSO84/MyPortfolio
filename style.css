@@ -408,7 +408,7 @@ html {
 }
 
 .circle-1 {
-    background: url(images/landing/circle11.jpg) center no-repeat;
+    background: url(images/landing/circle5.jpg) center no-repeat;
     background-size:cover;
     background-clip: content-box;
     border: 1rem outset var(--azulOxford2);
