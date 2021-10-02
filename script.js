@@ -259,7 +259,7 @@ menuIcon.addEventListener("click", () => {
 
 // About Me Text
 const aboutMeText = document.querySelector(".about-me-text");
-const aboutMeTextContent = "I am a designer & I create award winning websites with the best user experience & I do not talk much, just contact me.";
+const aboutMeTextContent = "Hi, I am Roberto, a Frontend Developer based in Guadalajara, México! Life is about creating and learning, and that is my approach as a professional. Love to transform ideas into experiences, and work as a team with my collegues. Welcome to my world! ";
 
 Array.from(aboutMeTextContent).forEach((char) => {
     const span = document.createElement("span");
