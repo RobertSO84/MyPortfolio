@@ -1146,6 +1146,8 @@ html {
 
     .main-circle {
         width: 38rem;
+        height: auto;
+
     }
 
     .main-circle:hover {
@@ -1155,8 +1157,14 @@ html {
     .form-heading {
         font-size: 5rem;
     }
-
+    .slideshow {
+        width: 45rem;
     }
+
+    .slideshow img {
+        padding: 0 0.4rem;
+    }
+    
 }
 
 /* End of Responsive */
