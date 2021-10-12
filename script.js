@@ -259,7 +259,7 @@ menuIcon.addEventListener("click", () => {
 
 // About Me Text
 const aboutMeText = document.querySelector(".about-me-text");
-const aboutMeTextContent = "Hi, I am Roberto, a Web Developer based in Guadalajara, México! Life is about creating and learning, and that is my approach as a professional. I am a self-taught coder and currently coursing a FullStack Python Developer, using Javascript in the Frontend.  Love to transform ideas into real experiences, and work as a team with you!. Welcome to my world! ";
+const aboutMeTextContent = "Hi, I am Roberto, a Web Developer based in Guadalajara, México! Life is about creating and learning, and that is my approach as a professional. I am a self-taught coder and currently coursing a FullStack Python Developer Bootcamp, learning HTML, CSS, Javascript, Pyhton, SQL, and more.  Love to transform ideas into real experiences, and work as a team with you!. Welcome to my world! ";
 
 Array.from(aboutMeTextContent).forEach((char) => {
     const span = document.createElement("span");
@@ -444,7 +444,7 @@ const username = document.getElementById("name");
 const email = document.getElementById("email");
 const subject = document.getElementById("subject");
 const message = document.getElementById("message");
-const messages = document.querySelectorAll(".messages");
+const messages = document.querySelectorAll(".message");
 
 const error = (input, message) => {
     input.nextElementSibling.classList.add("error");
@@ -453,10 +453,10 @@ const error = (input, message) => {
 
 const success = (input) => {
     input.nextElementSibling.classList.remove("error");
-}
+};
 
 const checkRequiredFields = (inputArray) => {
-    inputArray.forEach( input => {
+    inputArray.forEach( (input) => {
         if(input.value.trim() === "") {
             error(input, `${input.id} is required`);
         } 
@@ -472,7 +472,8 @@ const checkLength = (input, min) => {
 };
 
 const checkEmail = (input) => {
-    const regEx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const regEx =
+     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (regEx.test(input.value.trim())) {
         success(input);
     } else {
@@ -480,21 +481,21 @@ const checkEmail = (input) => {
     }
 };
 
-form.addEventListener("submit", e => {
+form.addEventListener("submit", (e) => {
+    
     checkLength(username, 2);
     checkLength(subject, 2);
-    checkLength(message, 4);
+    checkLength(message, 10);
     checkEmail(email);
     checkRequiredFields([username, email, subject, message]);
 
     const notValid = Array.from(messages).find((message) => {
-        return message.classList.contains("error")
+        return message.classList.contains("error");
     });
 
     notValid && e.preventDefault();
+    
 
 });
-
-
 // End of Form Validation
 // End of Section 5
